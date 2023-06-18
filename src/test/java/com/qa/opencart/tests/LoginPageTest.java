@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.resources.CommonMethods;
 
 public class LoginPageTest extends BaseTest{
 	
@@ -27,7 +28,17 @@ public class LoginPageTest extends BaseTest{
 	
 	@Test
 	public void loginTest() throws InterruptedException {
-		loginPage.doLogin("sammmm@gmail.com", "Test@1234");
+		loginPage.doLogin(CommonMethods.EmailGenerate(), "Test@1234");
+	}
+	
+	@Test
+	public void usernameTest() {
+		System.out.println("Username: " + CommonMethods.userName());
+	}
+	
+	@Test
+	public void phonenum() {
+		System.out.println("phonenumber: " + CommonMethods.password());
 	}
 
 }
